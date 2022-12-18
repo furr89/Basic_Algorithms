@@ -1,0 +1,10 @@
+﻿Square Root
+To find the square root of a number without using python classes is like finding it without a calculator. The best way would be to use a binary search algorithm and start with an upper bound number which is half of the input and keep searching between the range until the number has been reached. 
+
+
+Both methods of using iteration and recursion have a time complexity of O(log n). The reason why its time complexity is logarithmic is because of the halving;  while , the search reduces significantly for big numbers. Another explanation of why it’s O(log n) speed is because the print statements for the inputs have a logarithmic increase. As for space, the recursive method takes O(n) space, while the iteration method takes O(1) because there is no need for any additional data structures, so I stuck with iteration. 
+
+
+Sources
+How to calculate a square root without a calculator. Calculate square root without a calculator. (n.d.).From https://www.homeschoolmath.net/teaching/square-root-algorithm.php
+McLeod, A. (n.d.). Searching arrays: Algorithms and efficiency. Linear versus Binary Search. From https://research.cs.queensu.ca/home/cisc101spring/Spring2006/webnotes/search.html

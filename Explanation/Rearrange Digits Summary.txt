@@ -1,0 +1,9 @@
+﻿Rearrange Digits
+
+
+        The first step I took to solve this challenge was to choose which algorithm I would use to sort the array; my two options were heapsort and timsort. Timsort has a best case of O(n) and a worst case of O(n log n) for time complexity but a space complexity of O(n) whereas heapsort has a best and worst case time complexity of O(n log n) but a space complexity of O(1). 
+
+
+I opted to use heapsort for sorting because it is space efficient but before doing any sorting, it checks if the list needs to be sorted so the best case time complexity is O(n) for my solution. To rearrange the digits I used two for loops, to get the alternating numbers; there are two loops but half as many iterations therefore, the time complexity would not greatly increase. As for space complexity, it stores the contents of the array into two strings which then gets converted to integers so the space complexity is O(n).
+Source
+Know thy complexities! Big-O Cheat Sheet. (n.d.). From https://www.bigocheatsheet.com/

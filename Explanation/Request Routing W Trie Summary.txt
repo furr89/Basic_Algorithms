@@ -1,0 +1,18 @@
+﻿Request Routing
+
+
+        For the task, I decided to have all complexity in the RouteTrieNode and RouteTrie classes. The RouteTrieNode had automatically a “not found” handler which was helpful for cases like searching ‘/home’ which was not a valid page. In RouteTrie, the 3 functions that I implemented are insert(), find(), and cleanup_input(). 
+
+
+I needed to allow for trailing slashes and any other expected inputs by removing slashes at the start and end which is why I needed to clean the input. cleanup_input() also splits the path from “/home/about/” to [‘home’, ‘about’] for easier insertion and search. The python built in function, split is called so the time complexity of the function is O(n) because it must iterate through the input. It then converts the string to a list, using an additional data structure, which makes the space complexity O(n). 
+
+
+To insert, it takes in the list of pages and inserts it in the trie and simultaneously, assigning a handler as so: page from input “/home/about'' gets an “about handler”. The time complexity for insertion is O(m) where m is the number of pages. But bringing it together, the function also splits the path so the time complexity is O(n+m) simplifying to O(n). The space complexity for insertion is O(n) because it takes the list and stores it in another data structure, the trie. 
+        
+        Finding a path also starts with cleaning up the input, it will loop through list of pages and checks if it is found in the trie and if not it will return a not found handler otherwise it will return the page handler. The time complexity is O(m) because there is a need to iterate through the pages but simplifies to O(n) because of the cleanup function. For space complexity, it uses no additional data structure which makes it O(1).
+
+
+        This challenge could have been represented as a red-black tree because of the slashes, though I thought it would be simpler if I used a trie and cleaned up the input. 
+
+
+        Remarks: First off, the split_path() function from the Router class was not used because I implemented it in the RouteTrie class, I found it was simpler if I split the input when inserting and finding. I found that I could keep all insertion logic in the RouteTrie class rather than having a part of it in RouteTrieNode, though in the previous exercise I implemented it. Also I decided to be more creative with the handlers, rather than “not found handler” I used “ 404 Not Found” and for another page, I used another error code, “403 Forbidden”. Finally, rather than returning none when the input is a number for example, it would return a “400 Bad request” error for the sake of having clean outputs.

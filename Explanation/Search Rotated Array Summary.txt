@@ -1,0 +1,10 @@
+﻿Search in Rotated 
+Sorted Array
+The first step in searching a rotated sorted array is to divide it by two, the larger half, and the smaller half. Finding an optimal middle where the largest number is not found in the smaller half and vice versa, was crucial and it is the reason why I have implemented a function for it. 
+
+
+After successfully dividing it into two, I compared the number to the first and last index of the sub arrays to narrow down the search and from there I used a recursive method to search the array. Again, because of the constant halving, its time complexity is O(log n). Because I used recursion, it uses an implicitly called stack so the space complexity is O(n).
+
+
+Sources
+Binary search. GeeksforGeeks. (2022, October 13). From https://www.geeksforgeeks.org/binary-search/

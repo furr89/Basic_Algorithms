@@ -1,0 +1,14 @@
+﻿Autocomplete With Tries
+        For this challenge, there are 2 main functions implemented: insert and find where find is divided into two, finding a prefix and finding a suffix. 
+
+
+The first task is to build the trie with the insert() function. The way I implemented this is by iterating through the prefix (the input) and insert in the trie a character-TrieNode pair. Insertion in this case depends on the length of the word so its time complexity is O(m) where m is the word length. For the space complexity, a new node is added for every character so its space complexity is O(n). 
+
+
+        The second part is to implement find, it takes an input (prefix) where prefix is the user input and it would return possible characters that come after. It iterates through the prefix and checks if the character is present in the TrieNode dictionary keys; if so, it will update the current node after each iteration. The returning value would be a node at which the search is stopped at. The time complexity for find is O(m) where m is the length of the input and for the space complexity it is O(1) because it uses no additional data structures. 
+
+
+        The last main function is to find the suffixes (possible words) starting from the result of find(). It does a DFS recursive search in the TrieNode dictionary items and adds complete words to a list. The trie could be represented as a N-ary tree and making a DFS recursive search has a time complexity of O(n) because each node gets visited once. As for space complexity it uses recursion, which uses an implicitly called stack so it is O(n). 
+
+
+        Using alternative data structures like an array, storing words like ‘stop’ and ‘stopping’ would take 2 indexes. A trie optimizes the space and stores these words in a way that ‘stop’ is present, but after that ‘ping’ follows it up. Viewing it by letters stored, the total number of characters in an array would be 12 compared to a trie which would have only 8. As more and more words get added, the space using an array would become massive; the fact that tries don’t store duplicate letters is what makes it more efficient.

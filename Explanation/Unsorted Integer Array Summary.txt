@@ -1,0 +1,9 @@
+﻿Unsorted Integer Array
+        
+The goal for this challenge is to find the lowest and highest number in a single pass with O(n) time complexity. I did this by having an array of two numbers to store the min and max as well as a single for loop with a few checks. 
+
+
+The first two if statements check for the first two numbers and build the array I used for the output, while the other checks if the number is greater than the highest number or lower than the lowest number. At the end, I return it as a tuple of the two values. 
+
+
+The space complexity is O(1) because it doesn’t require any additional data structure; the array that stores the output presents a small increase in space complexity. For example: the input array is in length 10, the array used for output will always be of length two, or one in edge cases. Finally, other than the return statement, I did not use a tuple to store the value because I would have to convert it to a list to modify its values.

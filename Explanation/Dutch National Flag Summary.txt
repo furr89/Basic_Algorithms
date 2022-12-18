@@ -1,0 +1,2 @@
+﻿Dutch National Flag
+        The way I achieved an O(n) time complexity with a single traversal is by saving the first and last index. It iterates through once and checks if it’s either a 0 or a 2 and inserts in its respective indexes. It does not create a new array, rather it swaps the positions similar to what would happen in a heapsort algorithm and because of that, it also achieves O(1) space complexity.
